@@ -1,19 +1,12 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Osama Bilgrami</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<style>
+<head>
+    <title>Osama Bilgrami</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
         #intro {
             display: flex;
             align-items: center;
@@ -45,11 +38,34 @@
 
         #intro .text-content {
             flex: 1;
-            min-width: 200px; 
+            min-width: 200px;
+        }
+
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 768px) {
+            #intro {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #intro img {
+                width: 100%;
+                height: auto;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            #intro .text-content {
+                text-align: center;
+            }
+
+            #intro ul {
+                justify-content: center;
+            }
         }
     </style>
-		</head>
-		<body class="is-preload">
+</head>
+<body class="is-preload">
 
 			<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -59,16 +75,20 @@
 					<div class="text-content">
 						<h1>Hi, I'm Osama<br /></h1>
 						<br>
-						<img src="images/me.jpg">
+						<img src="images/me.jpg" alt="Your Image Description">
 						<p>Incoming Data Scientist/Data Analyst <br /> Master's in Data Science and Analytics, Google Certified Data Analyst</p>
+						<br>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
-	
+
+			<script src="assets/js/main.js"></script>
+
+		</body>
+		</html>
 
 				<!-- Header -->
 					<header id="header">
