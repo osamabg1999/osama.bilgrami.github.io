@@ -1,0 +1,78 @@
+---
+import { site } from '../data/site';
+import { assetUrl } from '../utils/assetUrl';
+
+const imgSrc = assetUrl(site.heroImage);
+---
+
+<section
+  class="mx-auto max-w-5xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 md:pt-20"
+  aria-labelledby="hero-heading"
+>
+  <div class="grid gap-10 md:grid-cols-[1fr_auto] md:items-center md:gap-12">
+    <div class="motion-safe:animate-fade-up">
+      <p class="font-mono text-sm text-accent">Data engineering · Analytics</p>
+      <h1
+        id="hero-heading"
+        class="mt-3 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl"
+      >
+        {site.name}
+      </h1>
+      <p class="mt-2 text-xl text-muted sm:text-2xl">{site.role}</p>
+      <p class="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-slate-300">
+        {site.tagline}
+      </p>
+      <p
+        class="mt-4 max-w-full font-mono text-sm leading-relaxed text-muted whitespace-nowrap overflow-x-auto [scrollbar-width:thin]"
+      >
+        {site.heroCredentials}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={site.linkedin}
+          class="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-accent-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href={site.github}
+          class="inline-flex items-center justify-center rounded-lg border border-line bg-raised px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-accent/50 hover:bg-panel focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="#masters-projects"
+          class="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium text-muted underline-offset-4 hover:text-white hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+        >
+          Master&apos;s projects
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="relative mx-auto w-full max-w-[180px] shrink-0 motion-safe:animate-fade-up sm:max-w-[200px] md:mx-0 md:max-w-[220px]"
+      style="animation-delay: 80ms"
+    >
+      <div
+        class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/40 via-transparent to-accent-dim/40 opacity-70 blur-md motion-reduce:opacity-40"
+        aria-hidden="true"
+      />
+      <div class="relative overflow-hidden rounded-2xl border border-line bg-raised shadow-xl">
+        <img
+          src={imgSrc}
+          alt={`Portrait of ${site.name}`}
+          width="220"
+          height="220"
+          class="aspect-square w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <p class="mt-2 text-center font-mono text-xs text-muted md:text-left">Calgary, AB</p>
+    </div>
+  </div>
+</section>

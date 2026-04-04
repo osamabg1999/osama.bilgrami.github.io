@@ -1,0 +1,69 @@
+---
+import { site } from '../data/site';
+---
+
+<footer
+  id="contact"
+  class="scroll-mt-24 border-t border-line bg-panel/30"
+  aria-labelledby="contact-heading"
+>
+  <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+    <h2
+      id="contact-heading"
+      class="font-mono text-sm font-medium uppercase tracking-widest text-accent"
+    >
+      Contact
+    </h2>
+    <p class="mt-4 max-w-xl text-lg text-slate-300">
+      For a fuller professional history, see LinkedIn. Email is fine for substantive notes or pointers to something
+      technical.
+    </p>
+    <div class="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-16">
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-wider text-muted">Email</h3>
+        <a
+          href={`mailto:${site.email}`}
+          class="mt-2 inline-block rounded text-white underline-offset-4 hover:text-accent hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          {site.email}
+        </a>
+      </div>
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-wider text-muted">Location</h3>
+        <p class="mt-2 text-slate-300">{site.location}</p>
+      </div>
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-wider text-muted">Social</h3>
+        <div class="mt-2 flex gap-4">
+          <a
+            href={site.github}
+            class="rounded text-muted transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            href={site.linkedin}
+            class="rounded text-muted transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="mt-14 border-t border-line/60 pt-8 font-mono text-xs text-muted">
+      © 2024 {site.name}
+      <a
+        href="https://astro.build"
+        class="text-slate-400 underline-offset-2 hover:text-accent hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+      </a>
+      
+    </p>
+  </div>
+</footer>

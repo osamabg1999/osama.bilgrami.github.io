@@ -1,0 +1,70 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Osama Bilgrami · Data Engineer',
+  description = "Data engineer in Calgary. Pipelines, SQL, Python, and cloud data platforms.",
+} = Astro.props;
+
+const canonical =
+  Astro.site != null ? new URL(import.meta.env.BASE_URL, Astro.site).href : undefined;
+
+/** Only in production: dev uses Vite scripts; script-src 'none' would break `npm run dev`. */
+const cspProduction = [
+  "default-src 'self'",
+  "script-src 'none'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "img-src 'self' data: https:",
+  "connect-src 'self'",
+  "base-uri 'self'",
+  "form-action 'none'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {import.meta.env.PROD ? <meta http-equiv="Content-Security-Policy" content={cspProduction} /> : null}
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {canonical ? <meta property="og:url" content={canonical} /> : null}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <slot name="head" />
+    <style is:global>
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-ink bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(45,212,191,0.08),transparent)] text-slate-100 font-sans antialiased selection:bg-accent/25 selection:text-white"
+  >
+    <slot />
+  </body>
+</html>

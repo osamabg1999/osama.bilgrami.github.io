@@ -1,0 +1,19 @@
+---
+import { aboutParagraphs } from '../data/site';
+---
+
+<section
+  id="about"
+  class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20"
+  aria-labelledby="about-heading"
+>
+  <h2
+    id="about-heading"
+    class="font-mono text-sm font-medium uppercase tracking-widest text-accent"
+  >
+    About
+  </h2>
+  <div class="mt-6 max-w-3xl space-y-5 text-lg leading-relaxed text-slate-300">
+    {aboutParagraphs.map((p) => <p>{p}</p>)}
+  </div>
+</section>
