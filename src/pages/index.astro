@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import PipelineStrip from '../components/PipelineStrip.astro';
+import AboutSection from '../components/AboutSection.astro';
+import SkillGroups from '../components/SkillGroups.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title={`${site.name} · ${site.role}`} description={site.metaDescription}>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <PipelineStrip />
+    <AboutSection />
+    <SkillGroups />
+    <ProjectGrid />
+  </main>
+  <SiteFooter />
+</BaseLayout>

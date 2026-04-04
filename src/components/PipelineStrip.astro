@@ -1,0 +1,21 @@
+---
+const steps = ['Ingest', 'Transform', 'Validate', 'Serve'] as const;
+---
+
+<div
+  class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2 px-4 py-6 font-mono text-xs text-muted sm:gap-3 sm:px-6 sm:text-sm"
+  aria-hidden="true"
+>
+  {
+    steps.map((label, i) => (
+      <>
+        {i > 0 ? (
+          <span class="hidden text-line sm:inline" aria-hidden="true">
+            →
+          </span>
+        ) : null}
+        <span class="rounded-full border border-line bg-panel px-3 py-1 text-accent/90">{label}</span>
+      </>
+    ))
+  }
+</div>

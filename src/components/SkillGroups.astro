@@ -1,0 +1,37 @@
+---
+import { skillGroups } from '../data/site';
+---
+
+<section
+  id="stack"
+  class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20"
+  aria-labelledby="stack-heading"
+>
+  <h2
+    id="stack-heading"
+    class="font-mono text-sm font-medium uppercase tracking-widest text-accent"
+  >
+    Stack
+  </h2>
+  <p class="mt-3 max-w-2xl text-muted">
+    Tools I use to move data from source systems to something analysts and models can rely on.
+  </p>
+  <div class="mt-10 grid gap-6 sm:grid-cols-2">
+    {
+      skillGroups.map((group) => (
+        <div class="rounded-xl border border-line bg-panel/60 p-6 shadow-sm backdrop-blur-sm">
+          <h3 class="font-mono text-sm font-semibold text-white">{group.title}</h3>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <li>
+                <span class="inline-block rounded-md border border-line bg-raised px-2.5 py-1 font-mono text-xs text-slate-200">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
