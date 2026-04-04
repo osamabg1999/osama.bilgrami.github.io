@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect width="16" height="16" fill="#0a0f14" rx="2"/>
+  <text x="6" y="12" font-family="monospace" font-size="9" font-weight="bold" fill="white" text-anchor="middle">OB</text>
+  <text x="13" y="12" font-family="monospace" font-size="9" font-weight="bold" fill="#2dd4bf" text-anchor="middle">.</text>
+</svg>
